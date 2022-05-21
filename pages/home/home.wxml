@@ -1,0 +1,30 @@
+<view class="map-wrap">
+    <!-- 自带组件 -->
+    <movable-area style="width: 100%; height: 100%;z-index: 9;" scale-area="true">
+        <movable-view style="width:1px; height: 1px;" x="{{0}}" y="{{0}}" direction="all" scale="true" out-of-bounds="true">
+            <view style="">
+                <image id="map-img"
+                    src="https://obohe.com/i/2022/05/19/m192dx.jpg"
+                    style="transform: scale({{scale}});"
+                    />
+            </view>
+        </movable-view>
+    </movable-area>
+
+    <!-- <map id="map" latitude="{{latitude}}" longitude="{{longitude}}" style="width: 100%;height:100%;"></map> -->
+
+    <!-- 手写拖拽和缩放 -->
+    <!-- <image id="map-img"
+        src="https://obohe.com/i/2022/05/18/uqftk3.jpg"
+        style="transform: translate({{translateX}}px, {{translateY}}px) scale({{scale}});"
+        catch:touchstart="touchStart"
+        catch:touchmove="touchMove"
+        catch:touchend="touchEnd"/> -->
+</view>
+<view class="bottom-wrap">
+    <movable-area class="" style="width: 100%; height: 100%;z-index: 9;">
+        <movable-view style="" x="{{250}}" y="{{450}}" direction="all"  >
+        ???
+        </movable-view>
+    </movable-area>
+</view>
