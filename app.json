@@ -9,7 +9,8 @@
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "漫步西湖",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#ecf0f1"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"

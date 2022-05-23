@@ -1,17 +1,17 @@
 <view class="map-wrap">
     <movable-area style="width: 100%; height: 100%;" scale-area="true">
-        <movable-view style="width:960px; height: 720px;" x="{{0}}" y="{{0}}" direction="all" scale="true" scale-min="1">
+        <movable-view style="width:960px; height: 720px;" x="{{0}}" y="{{0}}" direction="all" scale="true" scale-min=".7" scale-max="3">
             <view class="map-area">
                 <image id="map-img" src="{{imgSrc}}" bindload="loadImg" />
                 
-                <block wx:for="{{postions}}" wx:key="id">
+                <block wx:for="{{positions}}" wx:key="id">
                     <view class="map-postion" 
                         style="left:{{item.left}}px; top:{{item.top}}px; transform: scale({{highlightPos == item.id ? '1.8' : '1'}})"
                         bindtap="clickPostion"
                         data-id="{{item.id}}">
                         <image src="./pos.png" class="position-icon" wx:if="{{item.id === highlightPos}}"></image>
                         <view class="position-circle"></view>
-                        <text class="position-info">{{item.name}}</text>
+                        <text class="position-name">{{item.name}}</text>
                     </view>
                 </block>
 
@@ -20,5 +20,8 @@
     </movable-area>
 </view>
 <view class="bottom-wrap">
-
+    <view class="position-info">
+        <text>{{currentPostion.name}}</text>
+        <view class="btn" bindtap="enter">进入站点</view>
+    </view>
 </view>

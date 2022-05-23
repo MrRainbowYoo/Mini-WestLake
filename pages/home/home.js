@@ -1,13 +1,14 @@
 Page({
     data: {
-        imgSrc: 'https://obohe.com/i/2022/05/19/m192dx.jpg',
-        postions: [
+        imgSrc: 'https://obohe.com/i/2022/05/23/lwjy5x.jpg',
+        positions: [
             {id: 0, left: 50, top: 50, name: '杭州站', content: 'this is position 0'},
             {id: 1, left: 350, top: 100, name: '宁波站', content: 'this is position 1'},
             {id: 2, left: 150, top: 250, name: '台州站', content: 'this is position 2'},
             {id: 3, left: 200, top: 200, name: '嘉兴站', content: 'this is position 3'},
         ],
-        highlightPos: 2
+        highlightPos: 2,
+        currentPostion: null
     },
     loadImg() {
         wx.hideLoading()
@@ -17,9 +18,17 @@ Page({
         this.setData({
             highlightPos: clickId
         })
-        let currentPostion = this.data.postions.find(item => item.id === clickId)
+        let currentPostion = this.data.positions.find(item => item.id === clickId)
+        this.setData({
+            currentPostion
+        })
         let content = currentPostion.content
         console.log(content)
+    },
+    enter() {
+        wx.navigateTo({
+          url: '../index/index?currentPostion=' + JSON.stringify(this.data.currentPostion)
+        })
     },
     /**
      * 生命周期函数--监听页面加载
@@ -28,6 +37,9 @@ Page({
         wx.showLoading({
             title: '加载中......'
           });
+        this.setData({
+            currentPostion: this.data.positions[this.data.highlightPos]
+        })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
