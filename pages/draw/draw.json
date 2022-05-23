@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "share-box": "../../components/shareBox/index"
+    },
+    "navigationBarTitleText": "分享海报"
+}

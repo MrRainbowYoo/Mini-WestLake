@@ -24,16 +24,16 @@
 }
 
 .position-icon {
-    width: 40rpx;
-    height: 40rpx;
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: -100%;
     animation: move 1s ease-in-out infinite alternate;
 }
 
 .position-circle {
-    width: 20rpx;
-    height: 20rpx;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
     position: relative;
@@ -63,7 +63,7 @@
         transform: translate3d(0,0,0);
     }
     to {
-        transform: translate3d(0,12rpx,0);
+        transform: translate3d(0,30%,0);
     }
 }
 

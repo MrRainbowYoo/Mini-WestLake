@@ -1,0 +1,2 @@
+<button class="intro" bindtap="getUserInfo">点我生成分享图</button>
+<share-box isCanDraw="{{isCanDraw}}" userInfo="{{userInfo}}" bind:initData="handleClose" />

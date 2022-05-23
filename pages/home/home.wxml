@@ -1,6 +1,6 @@
 <view class="map-wrap">
     <movable-area style="width: 100%; height: 100%;" scale-area="true">
-        <movable-view style="width:960px; height: 720px;" x="{{0}}" y="{{0}}" direction="all" scale="true" scale-min=".7" scale-max="3">
+        <movable-view style="width:960px; height: 720px;" x="{{0}}" y="{{0}}" direction="all" scale="true" scale-min=".7" scale-max="3" animation="false">
             <view class="map-area">
                 <image id="map-img" src="{{imgSrc}}" bindload="loadImg" />
                 
@@ -21,7 +21,8 @@
 </view>
 <view class="bottom-wrap">
     <view class="position-info">
-        <text>{{currentPostion.name}}</text>
+        <text>{{currentPosition.name}}</text>
         <view class="btn" bindtap="enter">进入站点</view>
     </view>
+    <view class="btn" bindtap="enterDraw">进入Draw页面</view>
 </view>

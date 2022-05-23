@@ -8,7 +8,7 @@ Page({
             {id: 3, left: 200, top: 200, name: '嘉兴站', content: 'this is position 3'},
         ],
         highlightPos: 2,
-        currentPostion: null
+        currentPosition: null
     },
     loadImg() {
         wx.hideLoading()
@@ -18,16 +18,21 @@ Page({
         this.setData({
             highlightPos: clickId
         })
-        let currentPostion = this.data.positions.find(item => item.id === clickId)
+        let currentPosition = this.data.positions.find(item => item.id === clickId)
         this.setData({
-            currentPostion
+            currentPosition
         })
-        let content = currentPostion.content
+        let content = currentPosition.content
         console.log(content)
     },
     enter() {
         wx.navigateTo({
-          url: '../index/index?currentPostion=' + JSON.stringify(this.data.currentPostion)
+          url: '../canvas/canvas?currentPosition=' + JSON.stringify(this.data.currentPosition)
+        })
+    },
+    enterDraw() {
+        wx.navigateTo({
+          url: '../draw/draw'
         })
     },
     /**
@@ -38,7 +43,7 @@ Page({
             title: '加载中......'
           });
         this.setData({
-            currentPostion: this.data.positions[this.data.highlightPos]
+            currentPosition: this.data.positions[this.data.highlightPos]
         })
     },
     /**
